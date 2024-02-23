@@ -1,73 +1,73 @@
-<mxfile host="app.diagrams.net" modified="2024-02-23T01:41:36.130Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="aB4_CArh1OHxay9E99Rc" version="23.1.6" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-23T01:49:37.717Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="wRSV8fBXjbc3pbw2vH-o" version="23.1.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="967" dy="1001" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
-        <mxCell id="mQJPo1qvSjMa85qlDfSg-5" value="&lt;h1&gt;Task Management Application&lt;/h1&gt;&lt;p&gt;Allows user to create, view, update and delete tasks. Tasks are stored between session.&amp;nbsp;&amp;nbsp;&lt;/p&gt;&lt;p&gt;Functions:&lt;/p&gt;- User enters title, description,&amp;nbsp;&lt;span style=&quot;text-align: center;&quot;&gt;and task due date.&amp;nbsp;&lt;br&gt;&lt;br&gt;- can also add a tag: work, errand, etc.&lt;br&gt;&lt;/span&gt;&lt;p&gt;- task is added to a task list AND separated into buckets: TO DO, WIP, COMPLETED. All tasks start in TO DO&lt;/p&gt;&lt;p&gt;- tasks listed in order of due date&lt;/p&gt;&lt;p&gt;&amp;nbsp;- can add new tasks with title, description, and due dates&lt;br&gt;&lt;/p&gt;&lt;p&gt;- can update task details like title, description, date&lt;/p&gt;&lt;p&gt;- can move tasks from TO DO to WIP and COMPLETED.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="40" y="30" width="290" height="430" as="geometry" />
+        <mxCell id="mQJPo1qvSjMa85qlDfSg-5" value="&lt;h1&gt;Basic Flowchart&lt;/h1&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="20" y="30" width="280" height="40" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mQJPo1qvSjMa85qlDfSg-8">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="423.5" y="530" as="targetPoint" />
+            <mxPoint x="143.5" y="570" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mQJPo1qvSjMa85qlDfSg-8">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="655" y="530" as="targetPoint" />
+            <mxPoint x="375" y="570" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-8" value="Task ready to&amp;nbsp;&lt;br&gt;move from TO DO &lt;br&gt;to WIP?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="462.5" y="400" width="165" height="120" as="geometry" />
+          <mxGeometry x="182.5" y="440" width="165" height="120" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mQJPo1qvSjMa85qlDfSg-16" target="mQJPo1qvSjMa85qlDfSg-17">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-16" value="Start" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="495" y="50" width="100" height="60" as="geometry" />
+          <mxGeometry x="215" y="90" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mQJPo1qvSjMa85qlDfSg-17" target="mQJPo1qvSjMa85qlDfSg-19">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-17" value="Enter task title, description, &lt;br&gt;due date. Optional: tag" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="420" y="170" width="250" height="60" as="geometry" />
+          <mxGeometry x="140" y="210" width="250" height="60" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mQJPo1qvSjMa85qlDfSg-19" target="mQJPo1qvSjMa85qlDfSg-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-19" value="Added to task list and TO DO bucket,&amp;nbsp;&lt;br&gt;ordered by due date" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="390" y="300" width="310" height="60" as="geometry" />
+          <mxGeometry x="110" y="340" width="310" height="60" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="mQJPo1qvSjMa85qlDfSg-38">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="398.5" y="600" as="sourcePoint" />
+            <mxPoint x="118.5" y="640" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-23" value="Drag and drop task to WIP" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="380" y="535" width="100" height="70" as="geometry" />
+          <mxGeometry x="100" y="575" width="100" height="70" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mQJPo1qvSjMa85qlDfSg-24">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="535" y="530" as="targetPoint" />
+            <mxPoint x="255" y="570" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-24" value="Remains in TO DO" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="615" y="535" width="100" height="70" as="geometry" />
+          <mxGeometry x="335" y="575" width="100" height="70" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-28" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="422.5" y="428" width="40" height="30" as="geometry" />
+          <mxGeometry x="142.5" y="468" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-29" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="625" y="428" width="40" height="30" as="geometry" />
+          <mxGeometry x="345" y="468" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="mQJPo1qvSjMa85qlDfSg-38" target="mQJPo1qvSjMa85qlDfSg-40">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-38" value="Task ready to&amp;nbsp;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;move from WIP to Completed?" style="rhombus;whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="435" y="630" width="146.5" height="180" as="geometry" />
+          <mxGeometry x="155" y="670" width="146.5" height="180" as="geometry" />
         </mxCell>
         <mxCell id="mQJPo1qvSjMa85qlDfSg-40" value="Drag and drop task to COMPLETED" style="whiteSpace=wrap;html=1;rounded=1;arcSize=14;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="449" y="880" width="120" height="60" as="geometry" />
+          <mxGeometry x="169" y="920" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
