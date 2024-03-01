@@ -31,10 +31,40 @@ Functions:
 
 
 ## SCRUM Updates
+OVERALL GOAL: Complete backlog by 4/1 and begin testing, prepare for presentation, and complete documentation 
 
-First - 2/16
-- [x] Set up group 7 discord and text chain
+
+3/1
+BACKLOG:
 
 Goal for next meeting:
+
+2/23
+BACKLOG:
+  
+	- Frontend: Web-based user interface 
+		○ Visual Studio -- REACT -- JavaScript/Typescript/HTML/Markdown
+    ASSIGNED TO: Elizabeth and Jair
+		
+		
+	- Backend: File-based storage system
+		○ Mondo
+    ASSIGNED TO: Brian and Aaron
+		
+	- Documentation: clear documentation for your code, including how to run the application and any dependencies that need to be installed. 
+		○ README.md
+			§ List any dependencies that need to be installed
+			§ Any additional info -- gif, flowchart, embedded video in README
+		○ Youtube video
+		
+
+
+COMPLETED:
+
+2/16
+- [x] Set up group 7 discord and text chain
+
 - [x] Complete flowchart -- Assigned to: all members of team (Brian, Aaron, Elizabeth Emil, Jiar), will collaborate via Discord and discuss throughout the week
+      
+
 
