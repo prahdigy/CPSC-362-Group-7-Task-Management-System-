@@ -23,7 +23,8 @@ Functions:
 
 - can move tasks from TO DO to WIP and COMPLETED. 
 
-![Flowchart](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/blob/main/Untitled%20Diagram.drawio.svg)
+
+![Flowchart](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/blob/main/Updated%20Flowchart.drawio.svg)
 
 <a href= "https://app.diagrams.net/#HeliO160%2FCPSC-362-Group-7-Task-Management-System-%2Fmain%2FUntitled%20Diagram.drawio#%7B%22pageId%22%3A%22C5RBs43oDa-KdzZeNtuy%22%7D" target="_blank">Edit with draw.io</a>
 
