@@ -66,6 +66,3 @@ COMPLETED:
 
 - [x] Complete flowchart -- Assigned to: all members of team (Brian, Aaron, Elizabeth Emil, Jiar), will collaborate via Discord and discuss throughout the week
       
-
-hey
-hello test
