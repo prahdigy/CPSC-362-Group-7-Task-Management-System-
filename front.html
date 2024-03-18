@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Application</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Center everything */
+        html, body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+        
+        /* Container styles */
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add your CSS styles here */
+        #task-container {
+            width: 100%;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        #task-container .task-item {
+            margin-bottom: 5px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        #task-input-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #task-name-input {
+            flex: 1;
+            padding: 8px;
+            margin-right: 10px;
+        }
+        #add-task-btn {
+            padding: 8px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #add-task-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Management Application</h1>
+        
+        <!-- Task Input Bar -->
+        <div id="task-input-bar">
+            <input type="text" id="task-name-input" placeholder="Enter task name">
+            <button id="add-task-btn">Add Task</button>
+        </div>
+
+        <!-- Task Container -->
+        <div id="task-container"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const taskNameInput = document.getElementById('task-name-input');
+            const addTaskBtn = document.getElementById('add-task-btn');
+            const taskContainer = document.getElementById('task-container');
+
+            addTaskBtn.addEventListener('click', function() {
+                const taskName = taskNameInput.value.trim();
+                if (taskName) {
+                    // Create a new task item
+                    const taskItem = document.createElement('div');
+                    taskItem.className = 'task-item';
+                    taskItem.textContent = taskName;
+
+                    // Add the task to the task container
+                    taskContainer.appendChild(taskItem);
+
+                    // Clear the input field
+                    taskNameInput.value = '';
+                } else {
+                    alert('Please enter a task name.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
