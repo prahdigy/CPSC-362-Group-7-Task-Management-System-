@@ -18,53 +18,84 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f8f9fa;
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Default font */
         }
         
         /* Container styles */
         .container {
             max-width: 600px;
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 10px; /* Rounded corners */
             background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font for container */
+        }
+        
+        /* Header styles */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff; /* Blue header color */
         }
 
-        /* Add your CSS styles here */
-        #task-container {
-            width: 100%;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-        #task-container .task-item {
-            margin-bottom: 5px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
+        /* Task input bar styles */
         #task-input-bar {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font for task input bar */
         }
         #task-name-input {
             flex: 1;
-            padding: 8px;
-            margin-right: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font for task input */
         }
         #add-task-btn {
-            padding: 8px 20px;
-            background-color: #007bff;
+            padding: 10px 20px;
+            background-color: #28a745; /* Green button color */
             color: #fff;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font for button */
         }
         #add-task-btn:hover {
-            background-color: #0056b3;
+            background-color: #218838; /* Darker green button color on hover */
+        }
+
+        /* Task item styles */
+        .task-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f0f0f0; /* Light gray background for task items */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for task items */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .task-item .task-name {
+            flex: 1;
+        }
+        .task-item button {
+            padding: 8px 12px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .task-item button.complete-btn {
+            background-color: #007bff; /* Blue button color */
+            color: #fff;
+        }
+        .task-item button.drop-btn {
+            background-color: #dc3545; /* Red button color */
+            color: #fff;
         }
     </style>
 </head>
@@ -95,9 +126,26 @@
                     // Create a new task item
                     const taskItem = document.createElement('div');
                     taskItem.className = 'task-item';
-                    taskItem.textContent = taskName;
 
-                    // Add the task to the task container
+                    // Task name
+                    const taskNameElement = document.createElement('div');
+                    taskNameElement.className = 'task-name';
+                    taskNameElement.textContent = taskName;
+                    taskItem.appendChild(taskNameElement);
+
+                    // Complete button
+                    const completeButton = document.createElement('button');
+                    completeButton.className = 'complete-btn';
+                    completeButton.textContent = 'Complete';
+                    taskItem.appendChild(completeButton);
+
+                    // Drop button
+                    const dropButton = document.createElement('button');
+                    dropButton.className = 'drop-btn';
+                    dropButton.textContent = 'Drop';
+                    taskItem.appendChild(dropButton);
+
+                    // Add the task item to the task container
                     taskContainer.appendChild(taskItem);
 
                     // Clear the input field
