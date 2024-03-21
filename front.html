@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Management Application</title>
+    <title>Kanban Board Application</title>
     <style>
-        /* CSS Reset */
-        * {
+        /* Existing CSS here... */
+         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         /* Center everything */
         html, body {
             height: 100%;
@@ -21,19 +21,20 @@
             background-color: #f8f9fa; /* Light gray background */
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Default font */
         }
-        
+
         /* Container styles */
         .container {
-            max-width: 600px;
+            max-width: 800px; /* Adjusted for Kanban board */
+            width: 100%; /* Ensure it doesn't overflow on smaller screens */
             padding: 20px;
             border-radius: 10px; /* Rounded corners */
             background-color: #fff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font for container */
+            overflow: auto; /* For scrolling if content overflows */
         }
-        
+
         /* Header styles */
-        h1 {
+        h1, h2 {
             text-align: center;
             margin-bottom: 20px;
             color: #007bff; /* Blue header color */
@@ -44,7 +45,6 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font for task input bar */
         }
         #task-name-input {
             flex: 1;
@@ -52,7 +52,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font for task input */
         }
         #add-task-btn {
             padding: 10px 20px;
@@ -62,10 +61,21 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font for button */
         }
         #add-task-btn:hover {
             background-color: #218838; /* Darker green button color on hover */
+        }
+
+        /* Kanban Board styles */
+        .kanban-board {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Kanban Column styles */
+        .kanban-column {
+            flex: 1;
+            padding: 0 10px;
         }
 
         /* Task item styles */
@@ -75,86 +85,118 @@
             background-color: #f0f0f0; /* Light gray background for task items */
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for task items */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
-        .task-item .task-name {
-            flex: 1;
-        }
-        .task-item button {
-            padding: 8px 12px;
-            margin-left: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .task-item button.complete-btn {
-            background-color: #007bff; /* Blue button color */
-            color: #fff;
-        }
-        .task-item button.drop-btn {
-            background-color: #dc3545; /* Red button color */
-            color: #fff;
-        }
+
+        .btn-move-wip {
+        background-color: #007bff; /* Blue */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-left: 5px;
+    }
+
+    .btn-move-wip:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-drop {
+        background-color: #9d1f2c; /* Red */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-left: 5px;
+    }
+
+    .btn-drop:hover {
+        background-color: #bd2130;
+    }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Task Management Application</h1>
+        <h1>Kanban Board Application</h1>
         
         <!-- Task Input Bar -->
         <div id="task-input-bar">
             <input type="text" id="task-name-input" placeholder="Enter task name">
-            <button id="add-task-btn">Add Task</button>
+            <button id="add-task-btn">Add Task to 'To Do'</button>
         </div>
 
-        <!-- Task Container -->
-        <div id="task-container"></div>
+        <!-- Kanban Board -->
+        <div class="kanban-board">
+            <div class="kanban-column" id="todo-column">
+                <h2>To Do</h2>
+                <div class="task-container" id="todo-tasks"></div>
+            </div>
+            <div class="kanban-column" id="wip-column">
+                <h2>Work in Progress</h2>
+                <div class="task-container" id="wip-tasks"></div>
+            </div>
+            <div class="kanban-column" id="completed-column">
+                <h2>Completed</h2>
+                <div class="task-container" id="completed-tasks"></div>
+            </div>
+            <div class="kanban-column" id="dropped-column">
+                <h2>Dropped</h2>
+                <div class="task-container" id="dropped-tasks"></div>
+            </div>
+        </div>
     </div>
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const taskNameInput = document.getElementById('task-name-input');
-            const addTaskBtn = document.getElementById('add-task-btn');
-            const taskContainer = document.getElementById('task-container');
+     document.addEventListener('DOMContentLoaded', function() {
+        const taskNameInput = document.getElementById('task-name-input');
+        const addTaskBtn = document.getElementById('add-task-btn');
+        const todoTasks = document.getElementById('todo-tasks');
+        const wipTasks = document.getElementById('wip-tasks');
+        const droppedTasks = document.getElementById('dropped-tasks');
 
-            addTaskBtn.addEventListener('click', function() {
-                const taskName = taskNameInput.value.trim();
-                if (taskName) {
-                    // Create a new task item
-                    const taskItem = document.createElement('div');
-                    taskItem.className = 'task-item';
+        addTaskBtn.addEventListener('click', function() {
+            const taskName = taskNameInput.value.trim();
+            if (taskName) {
+                const taskItem = document.createElement('div');
+                taskItem.className = 'task-item';
+                taskItem.textContent = taskName;
 
-                    // Task name
-                    const taskNameElement = document.createElement('div');
-                    taskNameElement.className = 'task-name';
-                    taskNameElement.textContent = taskName;
-                    taskItem.appendChild(taskNameElement);
+                // Create Move to WIP Button
+                const moveToWipButton = document.createElement('button');
+                moveToWipButton.textContent = 'Move to WIP';
+                moveToWipButton.className = 'btn-move-wip';
+                moveToWipButton.onclick = function() {
+                    wipTasks.appendChild(taskItem);
+                    taskItem.removeChild(moveToWipButton);
+                    taskItem.removeChild(dropButton);
+                };
 
-                    // Complete button
-                    const completeButton = document.createElement('button');
-                    completeButton.className = 'complete-btn';
-                    completeButton.textContent = 'Complete';
-                    taskItem.appendChild(completeButton);
+                // Create Dropped Button
+                const dropButton = document.createElement('button');
+                dropButton.textContent = 'Drop';
+                dropButton.className = 'btn-drop';
+                dropButton.onclick = function() {
+                    droppedTasks.appendChild(taskItem);
+                    taskItem.removeChild(moveToWipButton);
+                    taskItem.removeChild(dropButton);
+                };
 
-                    // Drop button
-                    const dropButton = document.createElement('button');
-                    dropButton.className = 'drop-btn';
-                    dropButton.textContent = 'Drop';
-                    taskItem.appendChild(dropButton);
+                // Add buttons to the task item
+                taskItem.appendChild(moveToWipButton);
+                taskItem.appendChild(dropButton);
 
-                    // Add the task item to the task container
-                    taskContainer.appendChild(taskItem);
+                // Add the task to the 'To Do' column
+                todoTasks.appendChild(taskItem);
 
-                    // Clear the input field
-                    taskNameInput.value = '';
-                } else {
-                    alert('Please enter a task name.');
-                }
-            });
+                // Clear the input field
+                taskNameInput.value = '';
+            } else {
+                alert('Please enter a task name.');
+            }
         });
+    });
     </script>
 </body>
 </html>
