@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            align-items: center;
         }
 
         /* Center everything */
@@ -83,7 +84,7 @@
             padding: 10px;
             margin-bottom: 10px;
             background-color: #f0f0f0; /* Light gray background for task items */
-            border-radius: 5px;
+            border-radius: 200px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for task items */
         }
 
@@ -113,6 +114,16 @@
 
     .btn-drop:hover {
         background-color: #bd2130;
+    }
+
+    .btn-move-complete {
+        background-color: #007bff; /* Blue */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 5px 10px;
+        margin-left: 5px;
     }
     </style>
 </head>
@@ -155,6 +166,7 @@
         const todoTasks = document.getElementById('todo-tasks');
         const wipTasks = document.getElementById('wip-tasks');
         const droppedTasks = document.getElementById('dropped-tasks');
+        const completedTasks = document.getElementById('completed-tasks');
 
         addTaskBtn.addEventListener('click', function() {
             const taskName = taskNameInput.value.trim();
@@ -162,6 +174,7 @@
                 const taskItem = document.createElement('div');
                 taskItem.className = 'task-item';
                 taskItem.textContent = taskName;
+                var desc = prompt("Enter Description")
 
                 // Create Move to WIP Button
                 const moveToWipButton = document.createElement('button');
@@ -170,28 +183,76 @@
                 moveToWipButton.onclick = function() {
                     wipTasks.appendChild(taskItem);
                     taskItem.removeChild(moveToWipButton);
-                    taskItem.removeChild(dropButton);
+                    taskItem.removeChild(dropButtonTD);
+                    taskItem.appendChild(moveToCompleteButton);
+                    taskItem.appendChild(dropButtonWD)
                 };
 
-                // Create Dropped Button
-                const dropButton = document.createElement('button');
-                dropButton.textContent = 'Drop';
-                dropButton.className = 'btn-drop';
-                dropButton.onclick = function() {
+                // Create Dropped Button ToDo -> Drop
+                const dropButtonTD = document.createElement('button');
+                dropButtonTD.textContent = 'Drop';
+                dropButtonTD.className = 'btn-drop';
+                dropButtonTD.onclick = function() {
                     droppedTasks.appendChild(taskItem);
                     taskItem.removeChild(moveToWipButton);
-                    taskItem.removeChild(dropButton);
+                    taskItem.removeChild(dropButtonTD);
+                    taskItem.removeChild(editDescription);
+                };
+
+                // Create Dropped Button WIP -> Drop
+                const dropButtonWD = document.createElement('button');
+                dropButtonWD.textContent = 'Drop';
+                dropButtonWD.className = 'btn-drop';
+                dropButtonWD.onclick = function() {
+                    droppedTasks.appendChild(taskItem);
+                    taskItem.removeChild(moveToCompleteButton);
+                    taskItem.removeChild(dropButtonWD);
+                    taskItem.removeChild(editDescription);
+                };
+
+                // Create Move to Completed Button
+                const moveToCompleteButton = document.createElement('button');
+                moveToCompleteButton.textContent = 'Move to Completed';
+                moveToCompleteButton.className = 'btn-move-complete';
+                moveToCompleteButton.onclick = function() {
+                    completedTasks.appendChild(taskItem);
+                    taskItem.removeChild(moveToCompleteButton);
+                    taskItem.removeChild(dropButtonWD);
+                    taskItem.removeChild(editDescription);
+                };
+
+                //Check description 
+                const checkDescription = document.createElement('button');
+                checkDescription.textContent = 'View Description';
+                checkDescription.className = 'btn-move-complete';
+                checkDescription.onclick = function() {
+                    if (desc)
+                    {window.confirm(desc);}
+                    else {
+                    window.confirm("No Description");
+                    }
+                };
+
+                //Edit description 
+                const editDescription = document.createElement('button');
+                editDescription.textContent = 'Edit Description';
+                editDescription.className = 'btn-move-complete';
+                editDescription.onclick = function() {
+                    desc = prompt("Edit description");
                 };
 
                 // Add buttons to the task item
+                taskItem.appendChild(checkDescription);
+                taskItem.appendChild(editDescription);
                 taskItem.appendChild(moveToWipButton);
-                taskItem.appendChild(dropButton);
+                taskItem.appendChild(dropButtonTD);
 
                 // Add the task to the 'To Do' column
                 todoTasks.appendChild(taskItem);
 
                 // Clear the input field
                 taskNameInput.value = '';
+                taskDescInput.value = '';
             } else {
                 alert('Please enter a task name.');
             }
