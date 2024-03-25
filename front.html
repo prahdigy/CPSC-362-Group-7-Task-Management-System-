@@ -170,6 +170,9 @@
 
         addTaskBtn.addEventListener('click', function() {
             const taskName = taskNameInput.value.trim();
+            const now = new Date();
+
+            const currentDateTime = now.toLocaleString();
             if (taskName) {
                 const taskItem = document.createElement('div');
                 taskItem.className = 'task-item';
@@ -185,7 +188,7 @@
                     taskItem.removeChild(moveToWipButton);
                     taskItem.removeChild(dropButtonTD);
                     taskItem.appendChild(moveToCompleteButton);
-                    taskItem.appendChild(dropButtonWD)
+                    taskItem.appendChild(dropButtonWD);
                 };
 
                 // Create Dropped Button ToDo -> Drop
@@ -241,11 +244,20 @@
                     desc = prompt("Edit description");
                 };
 
+                //Check time 
+                const checkTime = document.createElement('button');
+                checkTime.textContent = 'View Time';
+                checkTime.className = 'btn-move-complete';
+                checkTime.onclick = function() {
+                    window.confirm(currentDateTime);
+                };
+
                 // Add buttons to the task item
                 taskItem.appendChild(checkDescription);
                 taskItem.appendChild(editDescription);
                 taskItem.appendChild(moveToWipButton);
                 taskItem.appendChild(dropButtonTD);
+                taskItem.appendChild(checkTime)
 
                 // Add the task to the 'To Do' column
                 todoTasks.appendChild(taskItem);
