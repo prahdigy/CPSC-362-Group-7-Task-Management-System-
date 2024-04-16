@@ -40,7 +40,7 @@ Step 2: Add description
 
 
 
-Step 2: Add due date
+Step 3: Add due date
 
 
 ![image](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/assets/142848584/c1018144-63de-4e9d-82ce-0651da5fde65)
@@ -48,7 +48,9 @@ Step 2: Add due date
 
 The new task automatically populates in the To Do column. 
 
-The following buttons also populate under the task name. These buttons allow the user to view and edit task details: 
+The following buttons also populate under the task name. These buttons allow the user to view and edit task details.
+
+
 ![image](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/assets/142848584/bc8fdcef-f02f-43b2-b991-78c6760f3237)
 
 
@@ -58,7 +60,7 @@ The following buttons also populate under the task name. These buttons allow the
 _View Description and View Due Date:_ View the description and due date.
 
 
-_View time:_ The user can view when the task was first added.
+_View time:_ The user can see when the task was first added.
 
 
  ![image](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/assets/142848584/02f0af5c-5e84-4562-920c-77a314e74aa9)
@@ -67,7 +69,7 @@ _View time:_ The user can view when the task was first added.
 **Edit button funtionalities**
 
 
-_Edit Description and Due Date:_ Click on these buttons to make updates to the description or due date
+_Edit Description and Edit Due Date:_ Click on these buttons to make updates to the description or due date
 
 
 **Update a Task:**
