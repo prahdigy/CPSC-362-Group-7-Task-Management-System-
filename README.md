@@ -28,12 +28,23 @@ Full Video Tutorial: _tk youtube link (To be completed after the backend code is
 **Add a New Task**
 
 Step 1: Add Task name
+
+Type task name into the field and click "Add Task to 'To Do'" button.
+
 ![image](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/assets/142848584/6309dad2-c6b1-4c31-8160-60b809f62146)
 
 Step 2: Add description
+
+
 ![image](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/assets/142848584/5500818f-bd13-4714-a157-3173a4796e3c)
 
+
+
 Step 2: Add due date
+
+
+![image](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/assets/142848584/c1018144-63de-4e9d-82ce-0651da5fde65)
+
 
 The new task automatically populates in the To Do column. 
 
@@ -41,20 +52,41 @@ The following buttons also populate under the task name. These buttons allow the
 ![image](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/assets/142848584/bc8fdcef-f02f-43b2-b991-78c6760f3237)
 
 
-**View buttons**
+
+**View button funtionalities**
+
 _View Description and View Due Date:_ View the description and due date.
 
+
 _View time:_ The user can view when the task was first added.
+
+
  ![image](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/assets/142848584/02f0af5c-5e84-4562-920c-77a314e74aa9)
 
 
-**Edit buttons**
-_Edit Description and Due Date:_
+**Edit button funtionalities**
+
+
+_Edit Description and Due Date:_ Click on these buttons to make updates to the description or due date
 
 
 **Update a Task:**
 
-**Delete a Task**
+
+A new task is added to the To Do column. To move it to the next column, Work in Progress, click on the "Move to WIP" button. This will move the task to the Work in Progress column. 
+
+Once a task is in the Work in Progress column, select the "Move to Completed" button to move it to the Completed column. 
+
+
+![image](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/assets/142848584/be71ae12-f8a0-49aa-aaf6-41cdc68aab71)
+
+
+
+**Delete or Drop a Task**
+
+To delete a task, select the "Delete Task" button. 
+
+To remove a task from the To Do or Work in Progress column, but save the task contents and continue to view it, select the red "Drop" button. The user cannot drop a task after it has been moved to Completed, but they can delete the task if they no longer wish to see it. 
 
 
 ## Design Flowchart:
