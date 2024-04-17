@@ -93,11 +93,9 @@ To remove a task from the To Do or Work in Progress column, but save the task co
 
 ## Design Flowchart:
 
-This design flowchart illustrates the basic functions of the application:   
+This flowchart illustrates the basic functions of the application:   
 
-![Flowchart](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/blob/main/Updated%20Flowchart.drawio.svg)
-
-<a href= "https://app.diagrams.net/#HeliO160%2FCPSC-362-Group-7-Task-Management-System-%2Fmain%2FUntitled%20Diagram.drawio#%7B%22pageId%22%3A%22C5RBs43oDa-KdzZeNtuy%22%7D" target="_blank">Edit with draw.io</a>
+![Flowchart](https://github.com/eliO160/CPSC-362-Group-7-Task-Management-System-/blob/Updated-Documentation/Final%20Flowchart.drawio.svg)
 
 
 ## Development History:
